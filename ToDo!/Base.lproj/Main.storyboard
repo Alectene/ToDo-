@@ -15,8 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="d3j-i8-49e">
-                                <rect key="frame" x="0.0" y="64" width="414" height="92"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="d3j-i8-49e">
+                                <rect key="frame" x="0.0" y="64" width="414" height="144"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task to Do" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yNW-Rr-rUh">
                                         <rect key="frame" x="0.0" y="0.0" width="81" height="20.5"/>
@@ -25,12 +25,12 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Thing To Do" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WTx-5h-BaS">
-                                        <rect key="frame" x="0.0" y="28.5" width="414" height="25.5"/>
+                                        <rect key="frame" x="0.0" y="54.5" width="414" height="25.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="13"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCr-4G-cRw">
-                                        <rect key="frame" x="0.0" y="62" width="151" height="30"/>
+                                        <rect key="frame" x="0.0" y="114" width="151" height="30"/>
                                         <state key="normal" title="Set Default Label Text"/>
                                         <connections>
                                             <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qjy-6J-6vB"/>
@@ -41,6 +41,14 @@
                                     <constraint firstAttribute="trailing" secondItem="WTx-5h-BaS" secondAttribute="trailing" id="3Jf-yL-Rab"/>
                                 </constraints>
                             </stackView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo.on.rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UxW-FU-9E1">
+                                <rect key="frame" x="61" y="216" width="293" height="203"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="K3S-vG-bM2" appends="YES" id="5e7-8o-Zhh"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -53,11 +61,20 @@
                     <connections>
                         <outlet property="TaskNameLabel" destination="yNW-Rr-rUh" id="UjG-fq-oFA"/>
                         <outlet property="nameTextField" destination="WTx-5h-BaS" id="cEf-Py-igp"/>
+                        <outlet property="photoImageView" destination="UxW-FU-9E1" id="6nr-K6-aMU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="K3S-vG-bM2">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="JSd-Cc-ZkR"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="photo.on.rectangle" catalog="system" width="128" height="98"/>
+    </resources>
 </document>
