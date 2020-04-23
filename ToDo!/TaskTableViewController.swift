@@ -21,9 +21,15 @@ class TaskTableViewController: UITableViewController {
         super.viewDidLoad()
         //adds edit button
         navigationItem.leftBarButtonItem = editButtonItem
-        
+        //loads saved tasks, otherwise load sample data
+        if let savedTasks = loadTasks(){
+            
+            tasks += savedTasks
+            
+        }else{
         //load Sample Data
         loadSampleTasks()
+        }
         
     }
 
@@ -76,6 +82,7 @@ class TaskTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             tasks.remove(at: indexPath.row)
+            saveTasks()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -152,6 +159,7 @@ class TaskTableViewController: UITableViewController {
             tableView.insertRows(at: [newIndexPath], with: .automatic)
             
         }
+        saveTasks()
         
     }
     }//end func unwindToTaskList
@@ -168,6 +176,21 @@ class TaskTableViewController: UITableViewController {
         tasks += [task1]
         
     }// end func loadSampleTasks
+    
+    private func saveTasks(){
+        
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(tasks, toFile: Task.ArchiveURL.path)
+        if isSuccessfulSave {
+            os_log("tasks successfully saved.", log: OSLog.default, type: .debug)
+        } else {
+            os_log("Failed to save task...", log: OSLog.default, type: .error)
+        }
+        
+    }//end func saveTasks
+    
+   private func loadTasks() -> [Task]?  {
+       return NSKeyedUnarchiver.unarchiveObject(withFile: Task.ArchiveURL.path) as? [Task]
+   }//end func loadTasks
     
     
     
