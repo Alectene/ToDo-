@@ -39,6 +39,7 @@
                                 <connections>
                                     <outlet property="nameLabel" destination="D3s-ug-Mjb" id="xle-fL-70o"/>
                                     <outlet property="photoImageView" destination="ZqK-Va-0dV" id="Znv-xe-a9N"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="ENz-SZ-rCU"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -64,11 +65,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TaskViewController" customModule="ToDo_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="d3j-i8-49e">
-                                <rect key="frame" x="0.0" y="76" width="414" height="66.5"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="66.5"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Thing To Do" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WTx-5h-BaS">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="25.5"/>
@@ -88,7 +89,7 @@
                                 </constraints>
                             </stackView>
                             <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.on.rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UxW-FU-9E1">
-                                <rect key="frame" x="61" y="196.5" width="292" height="203"/>
+                                <rect key="frame" x="61" y="228.5" width="292" height="203"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="203" id="Zg7-hl-977"/>
@@ -171,9 +172,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uN3-dw-vQx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="840.57971014492762" y="278.57142857142856"/>
+            <point key="canvasLocation" x="770" y="1132"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ENz-SZ-rCU"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
         <image name="photo.on.rectangle" catalog="system" width="128" height="98"/>

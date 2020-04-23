@@ -32,6 +32,15 @@ class TaskViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         // Handle the text field’s user input through delegate callbacks.
         nameTextField.delegate = self
         
+        // Set up views if editing an existing task.
+        if let task = task {
+            navigationItem.title = task.name
+            nameTextField.text = task.name
+            photoImageView.image = task.photo
+            
+        }
+        
+        
         // Enable the Save button only if the text field has a valid Meal name.
         updateSaveButtonState()
         
@@ -83,7 +92,19 @@ class TaskViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     
     //when cancel button pressed, goes back
     @IBAction func cancel(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        //dismiss(animated: true, completion: nil)
+        // Depending on style of presentation (modal or push presentation), this view controller needs to be dismissed in two different ways.
+        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        
+        if isPresentingInAddMealMode {
+            dismiss(animated: true, completion: nil)
+        }
+        else if let owningNavigationController = navigationController{
+            owningNavigationController.popViewController(animated: true)
+        }
+        else {
+            fatalError("The TaskViewController is not inside a navigation controller.")
+        }
     }//end func cancel
     
     
