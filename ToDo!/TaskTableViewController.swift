@@ -106,6 +106,21 @@ class TaskTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    //Actions
+    
+    @IBAction func unwindToTaskList(sender: UIStoryboardSegue){
+        
+        if let sourceViewController = sender.source as? TaskViewController, let task = sourceViewController.task {
+            
+           // Add a new meal.
+           let newIndexPath = IndexPath(row: tasks.count, section: 0)
+            
+            tasks.append(task)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            
+        }
+        
+    }
 
     //Private methods
     private func loadSampleTasks(){
