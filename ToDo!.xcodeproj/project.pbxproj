@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		BBFFDDDA244FFF25000C2299 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBFFDDD8244FFF25000C2299 /* LaunchScreen.storyboard */; };
 		BBFFDDE5244FFF26000C2299 /* ToDo_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFFDDE4244FFF26000C2299 /* ToDo_Tests.swift */; };
 		BBFFDDF0244FFF26000C2299 /* ToDo_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFFDDEF244FFF26000C2299 /* ToDo_UITests.swift */; };
+		BBFFDDFE2451486E000C2299 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFFDDFD2451486E000C2299 /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		BBFFDDEB244FFF26000C2299 /* ToDo!UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ToDo!UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBFFDDEF244FFF26000C2299 /* ToDo_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo_UITests.swift; sourceTree = "<group>"; };
 		BBFFDDF1244FFF26000C2299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BBFFDDFD2451486E000C2299 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		D752992210E70734025E757E /* Pods-ToDo!-ToDo!UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDo!-ToDo!UITests.debug.xcconfig"; path = "Target Support Files/Pods-ToDo!-ToDo!UITests/Pods-ToDo!-ToDo!UITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,7 +103,6 @@
 				8A503E923FB5B4FD9E4ECAC5 /* Pods-ToDo!Tests.debug.xcconfig */,
 				057E6F48204109F16FA00A22 /* Pods-ToDo!Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -144,6 +145,7 @@
 				BBFFDDCF244FFF1D000C2299 /* SceneDelegate.swift */,
 				BBFFDDD1244FFF1D000C2299 /* ViewController.swift */,
 				BBFFDDD3244FFF1D000C2299 /* Main.storyboard */,
+				BBFFDDFD2451486E000C2299 /* Task.swift */,
 				BBFFDDD6244FFF25000C2299 /* Assets.xcassets */,
 				BBFFDDD8244FFF25000C2299 /* LaunchScreen.storyboard */,
 				BBFFDDDB244FFF25000C2299 /* Info.plist */,
@@ -408,6 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBFFDDFE2451486E000C2299 /* Task.swift in Sources */,
 				BBFFDDD2244FFF1D000C2299 /* ViewController.swift in Sources */,
 				BBFFDDCE244FFF1D000C2299 /* AppDelegate.swift in Sources */,
 				BBFFDDD0244FFF1D000C2299 /* SceneDelegate.swift in Sources */,
