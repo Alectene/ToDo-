@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TaskViewController.swift
 //  ToDo!
 //
 //  Created by Alec Tenefrancia on 4/21/20.
@@ -9,11 +9,11 @@
 import UIKit
 import AlamofireImage
 
-class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class TaskViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     //Properties
     
-    @IBOutlet weak var TaskNameLabel: UILabel!
+    
     
     
     @IBOutlet weak var nameTextField: UITextField!
@@ -39,7 +39,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         //pressing done on keyboard updates Title
-        TaskNameLabel.text = textField.text
+        
     }//end func textFieldDidEndEditing
     
     //UIImagePickerControllerDelegate
@@ -72,7 +72,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
         //changes TaskNameLabel to Default Text
-        TaskNameLabel.text = "Default Text"
+        
     }// end func setDefaultLabelText
     
 
